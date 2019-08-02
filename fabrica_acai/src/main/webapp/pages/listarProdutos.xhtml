@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:b="http://bootsfaces.net/ui"
+		xmlns:p="http://primefaces.org/ui"
+		template="/templates/modeloUnico.xhtml">
+			
+<ui:define name="menu">
+
+<ui:include src="/includes/menuPrincipal.xhtml"/>
+
+</ui:define>
+
+<ui:define name="conteudo">
+
+
+<h:form style="padding:18px; color:black; font-size:14px;">
+
+
+<b:dataTable value="#{MBProduto.itens}"
+               var="item" excel="true" pdf="true" border="false" striped="false" style="background-color:rgb(192,192,192)" >
+            
+    <b:dataTableColumn value="#{item.lote}" header-style="background-color:rgb(128,128,255, 0.5);font-size:14px" style="border:1px solid black; font-size:16px;"/>
+    <b:dataTableColumn value="#{item.tipo}" header-style="background-color:rgb(128,128,255, 0.5);font-size:14px" style="border:1px solid black; font-size:16px"/>
+    <b:dataTableColumn value="#{item.vendedor}" header-style="background-color:rgb(128,128,255, 0.5);font-size:14px" style="border:1px solid black; font-size:16px" />
+    <b:dataTableColumn value="#{item.valor}" header-style="background-color:rgb(128,128,255, 0.5);font-size:14px" style="border:1px solid black; font-size:16px" />
+    <b:dataTableColumn value="#{item.quantidade}" header-style="background-color:rgb(128,128,255, 0.5);font-size:14px" style="border:1px solid black; font-size:16px" />
+    <b:dataTableColumn value="#{item.dataCompra}" header-style="background-color:rgb(128,128,255, 0.5);font-size:14px" style="border:1px solid black; font-size:16px"/>  
+    
+  </b:dataTable>
+  
+  
+ 
+  
+</h:form>
+
+
+
+</ui:define>
+
+</ui:composition>
